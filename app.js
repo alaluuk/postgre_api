@@ -11,7 +11,7 @@ var app = express();
 app.use(cors());
 const basicAuth = require('express-basic-auth');
 app.use(basicAuth( { authorizer: myAuthorizer, authorizeAsync:true, } ))
-//app.use(basicAuth({users: { 'admin': '1234' }}))
+
 const dotenv = require('dotenv');
 dotenv.config();
 
