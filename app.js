@@ -12,7 +12,7 @@ var app = express();
 app.use(cors());
 app.use(express.static('public'));
 const basicAuth = require('express-basic-auth');
-//app.use(basicAuth( { authorizer: myAuthorizer, authorizeAsync:true, } ))
+app.use(basicAuth( { authorizer: myAuthorizer, authorizeAsync:true, } ))
 
 
 const dotenv = require('dotenv');
