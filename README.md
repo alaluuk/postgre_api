@@ -1,10 +1,16 @@
-# day6
+# Express / PostgreSQL
 
-use library;
-CREATE TABLE user_table(
-  id_user INT primary key auto_increment,
-  username VARCHAR(20),
-  password VARCHAR(255),
-  images VARCHAR(255),
-  UNIQUE (username)
-);
+## Database Connection
+Add these to environment variables
+PGUSER=netuser<br>
+PGHOST=localhost<br>
+PGPASSWORD=netpass<br>
+PGDATABASE=netdb<br>
+PGPORT=5432
+
+And then the database.js can be like this <br>
+const Pool = require('pg').Pool;<br>
+const dotenv = require('dotenv');<br>
+dotenv.config();<br>
+const connection = new Pool();<br>
+module.exports = connection;<br>

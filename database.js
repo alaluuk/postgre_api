@@ -1,9 +1,5 @@
 const Pool = require('pg').Pool;
-const connection = new Pool({
-  user: 'netuser',
-  host: 'localhost',
-  database: 'netdb',
-  password: 'netpass',
-  port: 5432,
-});
+const dotenv = require('dotenv');
+dotenv.config();
+const connection = new Pool();
 module.exports = connection;
