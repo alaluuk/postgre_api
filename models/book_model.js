@@ -3,7 +3,7 @@ const book = {
   getAll: function(callback) {
     return db.query('select * from book_table order by id_book desc', callback);
   },
-  getByid_book: function(id_book, callback) {
+  getById: function(id_book, callback) {
     return db.query('select * from book_table where id_book=$1', [id_book], callback);
   },
   add: function(book, callback) {
