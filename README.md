@@ -36,6 +36,20 @@ module.exports = pgClient;<br>
 
 Above versions didn't work in Heroku (with Heroku Postgress) anymore, so I had to write this to the database.js 
 
+require("dotenv").config();<br>
+const { Pool } = require('pg');<br>
+const pool = new Pool({<br>
+  connectionString: process.env.DATABASE_URL,<br>
+  ssl: {<br>
+    rejectUnauthorized: false<br>
+  }<br>
+});<br>
+module.exports = pool;
+
+<hr>
+
+Also this version of database.js works 
+
 const Pool = require("pg").Pool;<br>
 require("dotenv").config();<br>
 const connectionString = `postgresql://${process.env.PG_USER}:${process.env.PG_PASSWORD}@${process.env.PG_HOST}:${process.env.PG_PORT}/${process.env.PG_DATABASE}`;<br>
