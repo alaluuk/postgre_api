@@ -2,13 +2,15 @@
 
 ## Database Connection
 Add these to environment variables
+
 PGUSER=netuser<br>
 PGHOST=localhost<br>
 PGPASSWORD=netpass<br>
 PGDATABASE=netdb<br>
 PGPORT=5432
 
-And then the database.js can be like this <br>
+And then the database.js can be like this 
+
 const Pool = require('pg').Pool;<br>
 const dotenv = require('dotenv');<br>
 dotenv.config();<br>
