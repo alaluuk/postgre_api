@@ -16,3 +16,18 @@ const dotenv = require('dotenv');<br>
 dotenv.config();<br>
 const connection = new Pool();<br>
 module.exports = connection;<br>
+
+## Another version
+Add this to environment variables
+
+DATABASE_URL = "postgres://netuser:netpass@localhost:5432/netdb"
+
+And then the database.js can be like this 
+
+const dotenv = require('dotenv');<br>
+dotenv.config();<br>
+const pg=require('pg');<br>
+const pgClient= new pg.Client(process.env.DATABASE_URL);<br>
+
+pgClient.connect();<br>
+module.exports = pgClient;<br>
