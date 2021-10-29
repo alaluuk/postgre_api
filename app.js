@@ -4,9 +4,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var bookRouter = require('./routes/book');
-var customerRouter = require('./routes/customer');
-var borrowRouter = require('./routes/borrow');
-var userRouter = require('./routes/user');
 const cors = require('cors');
 var app = express();
 app.use(cors());
@@ -38,8 +35,5 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/book', bookRouter);
-app.use('/customer', customerRouter);
-app.use('/borrow', borrowRouter);
-app.use('/user', userRouter);
 
 module.exports = app;
