@@ -7,7 +7,7 @@ var bookRouter = require('./routes/book');
 const cors = require('cors');
 var app = express();
 app.use(cors());
-app.use(express.static('public'));
+
 const basicAuth = require('express-basic-auth');
 app.use(basicAuth( { authorizer: myAuthorizer, authorizeAsync:true, } ))
 
